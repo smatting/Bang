@@ -1,0 +1,28 @@
+name: Bang
+
+version: 0.1.1.2
+
+ghc-options:
+    - -fwarn-tabs                      # Emit warnings of tabs instead of spaces in the source code
+    - -fwarn-incomplete-uni-patterns   # Emit warnings for incomplete patterns in lambdas or pattern bindings
+    - -fwarn-incomplete-patterns       # Warn on non-exhaustive patterns
+    - -fwarn-overlapping-patterns      # Warn on pattern matching branches that overlap
+    - -fwarn-incomplete-record-updates # Warn when records are not instantiated with all fields
+    - -fno-warn-deprecations
+    # - -fwarn-name-shadowing            # Warn on duplicate names in nested bindings
+    # - -fwarn-missing-signatures        # Warn about toplevel missing type signatures
+    # - -fwarn-monomorphism-restriction  # Warn when the monomorphism restriction is applied implicitly
+    # - -fwarn-unused-imports            # Warn about libraries imported without being used
+
+dependencies:
+    - base
+    - mtl
+    - transformers
+    - bifunctors
+    - stm
+    - hmidi
+    - time
+
+library:
+  source-dirs: src/
+
