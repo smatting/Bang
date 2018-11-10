@@ -57,10 +57,12 @@ data Control =
     deriving (Show, Eq)
 
 {-
-  NB. `Music` under `:=:` also forms a monoid, so we'll give these similar names...
+  NB. `Music` under `:=:` also forms a semigroup and monoid, so we'll give these similar names...
 -}
+instance Num dur => Semigroup (Music dur a) where
+  (<>) = (:+:)
+
 instance Num dur => Monoid (Music dur a) where
-  mappend = (:+:)
   mempty = Prim (Rest 0)
 
 {-
